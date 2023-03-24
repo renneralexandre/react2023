@@ -15,7 +15,7 @@ const GMUDPage = () => {
         <Grid item xs={6}>
           <BasicCard
             title="Teste"
-            details="O texto deste card é muito bonito de verdade. Meu Deus que card legal. Precisa de outra fonte. ..."
+            details="O texto deste card é muito bonito de verdade. "
           ></BasicCard>
         </Grid>
         <Grid item xs={6}>

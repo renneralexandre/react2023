@@ -11,10 +11,10 @@ interface Props {
 
 const BasicCard = (props: Props) => {
   return (
-    <Card>
+    <Card sx={{bgcolor: 'blue', maxWidth: 300, maxHeight: 300}}>
       <CardContent >
         <CardHeader title={props.title} />
-        <h1>{props.details}</h1>
+        <h3>{props.details}</h3>
       </CardContent>
       <CardActions>
         <Button size="small" variant="contained">
