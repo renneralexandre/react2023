@@ -1,0 +1,35 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: aliceblue;
+    height: 100%;
+    
+}
+
+.appbar {
+    width: 100%;
+    background-color: darkslategrey;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: yellow;
+    height: 50px;
+    
+}
+
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    color: aliceblue;
+    margin: 10px;
+    padding: 10px;
+    
+}
+
+
+.cardContainer {
+    display: flex;
+    background-color: aqua;
+    height: 500px;
+}
