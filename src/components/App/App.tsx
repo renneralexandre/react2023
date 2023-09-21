@@ -2,6 +2,7 @@ import "./App.css";
 
 import Card from "../Card";
 import AppBar from "../AppBar";
+import { RButton } from "../Button";
 
 function App() {
   const CardList = [];
@@ -11,8 +12,9 @@ function App() {
 
   return (
     <>
-      <AppBar />
-      <div className="cardContainer">{CardList}</div>
+      {/* <AppBar /> */}
+      {/* <div className="cardContainer">{CardList}</div> */}
+      <RButton />
     </>
   )
 }
