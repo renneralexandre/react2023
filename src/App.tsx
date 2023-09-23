@@ -1,9 +1,11 @@
+import ResponsiveAppBar from "./ResponsiveAppBar";
+
 const App = () => {
   return (
     <>
-      <div>component</div>
+      <ResponsiveAppBar></ResponsiveAppBar>
     </>
-  )
-}
+  );
+};
 
 export default App;
