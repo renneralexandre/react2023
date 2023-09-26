@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { CssBaseline, ThemeProvider } from "@mui/material";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import theme from "./theme/index";
+import AppThemeProvider from "./context/theme.context";
 import App from "./App.tsx";
 // ======================= =======================
 const router = createBrowserRouter([{ path: "/", element: <App /> }]);
@@ -11,9 +10,8 @@ const router = createBrowserRouter([{ path: "/", element: <App /> }]);
 // ======================= =======================
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <AppThemeProvider>
       <RouterProvider router={router} />
-    </ThemeProvider>
+    </AppThemeProvider>
   </React.StrictMode>
 );
