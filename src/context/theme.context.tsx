@@ -1,50 +1,35 @@
-import { CssBaseline, Theme, ThemeProvider } from "@mui/material";
+import { FC, ReactNode, createContext, useContext } from "react";
 import { deepPurpleTheme, redTheme } from "../themes";
-import { createContext, useEffect, useState } from "react";
+import { CssBaseline, Theme, ThemeProvider } from "@mui/material";
 
-// Tipo de dados do contexto de Thema
 interface ThemeContextData {
   theme: Theme;
-}
-//Criar contexto para manter o thema global para a aplicacao
-const ThemeContext = createContext({} as ThemeContextData);
-
-interface AppThemeProps {
-  children: React.ReactNode;
-  theme: Theme;
+  toogleTheme: () => void;
 }
 
-const AppThemeProvider: React.FC<AppThemeProps> = ({
-  children,
-  theme = deepPurpleTheme,
-}) => {
-  const [themeName, setThemeName] = useState(theme);
+function toogleTheme(t: Theme) {
+  return t === deepPurpleTheme ? redTheme : deepPurpleTheme;
+}
 
-  useEffect(() => {
-    // setThemeName(theme);
-    console.log("teste");
-  }, [theme]);
+const themeContextData: ThemeContextData = {
+  theme: deepPurpleTheme,
+  toogleTheme: () => toogleTheme,
+};
 
-  const toogleTheme = () => {
-    console.log("toogleTheme Function");
-    console.log(themeName);
-    setThemeName((oldThemeName) =>
-      oldThemeName === deepPurpleTheme ? redTheme : deepPurpleTheme
-    );
-  };
+export const AppThemeContextProvider = createContext(themeContextData);
 
+interface AppThemeProviderInterface {
+  children: ReactNode;
+}
+
+const AppThemeProvider: FC<AppThemeProviderInterface> = ({ children }) => {
   return (
-    <ThemeProvider theme={themeName}>
-      <CssBaseline />
-      <button
-        onClick={() => {
-          toogleTheme();
-        }}
-      >
-        changeTheme
-      </button>
-      {children}
-    </ThemeProvider>
+    <AppThemeContextProvider.Provider value={themeContextData}>
+      <ThemeProvider theme={themeContextData.theme}>
+        <CssBaseline />
+        {children}
+      </ThemeProvider>
+    </AppThemeContextProvider.Provider>
   );
 };
 

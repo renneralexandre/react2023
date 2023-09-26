@@ -3,8 +3,8 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import AppThemeProvider from "./context/theme.context";
-import App from "./App.tsx";
 // ======================= =======================
+import App from "./App.tsx";
 const router = createBrowserRouter([{ path: "/", element: <App /> }]);
 
 // ======================= =======================
