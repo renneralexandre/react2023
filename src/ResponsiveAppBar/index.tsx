@@ -12,13 +12,13 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-// import { AppThemeContext } from "../context/theme.context";
+import { AppThemeContextProvider } from "../context/theme.context";
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar() {
-  // const theme = React.useContext(AppThemeContext);
+  const { theme, toogleTheme } = React.useContext(AppThemeContextProvider);
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
@@ -145,7 +145,9 @@ function ResponsiveAppBar() {
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
-              <Button variant="contained">Toogle</Button>
+              <Button variant="contained" onClick={toogleTheme}>
+                Toogle
+              </Button>
               <MenuItem key="">ToogleColor</MenuItem>
             </Menu>
           </Box>

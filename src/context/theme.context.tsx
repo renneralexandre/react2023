@@ -1,4 +1,4 @@
-import { FC, ReactNode, createContext, useContext } from "react";
+import { FC, ReactNode, createContext, useContext, useState } from "react";
 import { deepPurpleTheme, redTheme } from "../themes";
 import { CssBaseline, Theme, ThemeProvider } from "@mui/material";
 
@@ -7,25 +7,22 @@ interface ThemeContextData {
   toogleTheme: () => void;
 }
 
-function toogleTheme(t: Theme) {
-  return t === deepPurpleTheme ? redTheme : deepPurpleTheme;
-}
-
-const themeContextData: ThemeContextData = {
-  theme: deepPurpleTheme,
-  toogleTheme: () => toogleTheme,
-};
-
-export const AppThemeContextProvider = createContext(themeContextData);
+export const AppThemeContextProvider = createContext({} as ThemeContextData);
 
 interface AppThemeProviderInterface {
   children: ReactNode;
 }
 
 const AppThemeProvider: FC<AppThemeProviderInterface> = ({ children }) => {
+  const [theme, setTheme] = useState(redTheme);
+
+  const toogleTheme = () => {
+    setTheme(theme === redTheme ? deepPurpleTheme : redTheme);
+  };
+
   return (
-    <AppThemeContextProvider.Provider value={themeContextData}>
-      <ThemeProvider theme={themeContextData.theme}>
+    <AppThemeContextProvider.Provider value={{ theme, toogleTheme }}>
+      <ThemeProvider theme={theme}>
         <CssBaseline />
         {children}
       </ThemeProvider>
