@@ -2,7 +2,7 @@ import { createTheme } from "@mui/material";
 
 import { deepPurple, cyan } from "@mui/material/colors";
 
-export const theme = createTheme({
+export const theme1 = createTheme({
   palette: {
     primary: {
       dark: deepPurple[900],
@@ -19,9 +19,20 @@ export const theme = createTheme({
   },
   typography: {
     fontFamily: ["Verdana"].join(","),
+    fontSize: 10,
     fontWeightRegular: 900,
     fontWeightBold: 900,
     fontWeightLight: 900,
     fontWeightMedium: 900,
+  },
+  components: {
+    MuiCardHeader: {
+      styleOverrides: {
+        root: ({ theme: { palette } }) => ({ backgroundColor: palette.primary.light }),
+      },
+    },
+    MuiButton: {
+      styleOverrides: {},
+    },
   },
 });

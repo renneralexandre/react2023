@@ -1,4 +1,4 @@
-import { FC, ReactNode, createContext, useContext, useState } from "react";
+import { FC, ReactNode, createContext, useState } from "react";
 import { deepPurpleTheme, redTheme } from "../themes";
 import { CssBaseline, Theme, ThemeProvider } from "@mui/material";
 
@@ -14,7 +14,7 @@ interface AppThemeProviderInterface {
 }
 
 const AppThemeProvider: FC<AppThemeProviderInterface> = ({ children }) => {
-  const [theme, setTheme] = useState(redTheme);
+  const [theme, setTheme] = useState(deepPurpleTheme);
 
   const toogleTheme = () => {
     setTheme(theme === redTheme ? deepPurpleTheme : redTheme);
