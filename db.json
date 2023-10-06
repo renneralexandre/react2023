@@ -1,10 +1,10 @@
 {
     "users": [
         { "id": 1, "name": "Renner", "gender": "m" },
-        { "id": 1, "name": "Thiago", "gender": "m" },
-        { "id": 1, "name": "Bruno", "gender": "m" },
-        { "id": 1, "name": "Isabela", "gender": "f" },
-        { "id": 1, "name": "Bruna", "gender": "f" }      
+        { "id": 2, "name": "Thiago", "gender": "m" },
+        { "id": 3, "name": "Bruno", "gender": "m" },
+        { "id": 4, "name": "Isabela", "gender": "f" },
+        { "id": 5, "name": "Bruna", "gender": "f" }      
     ],
     "comments": [
       { "id": 1, "body": "some comment", "postId": 1 }

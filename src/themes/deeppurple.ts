@@ -26,13 +26,30 @@ export const theme1 = createTheme({
     fontWeightMedium: 900,
   },
   components: {
-    MuiCardHeader: {
+    MuiAppBar: {
       styleOverrides: {
-        root: ({ theme: { palette } }) => ({ backgroundColor: palette.primary.light }),
+        root: ({ theme: { palette } }) => ({
+          background: `linear-gradient(45deg, ${palette.primary.dark}, ${palette.secondary.light})`,
+          padding: 2,
+        }),
       },
     },
-    MuiButton: {
-      styleOverrides: {},
+    MuiCardHeader: {
+      styleOverrides: {
+        root: ({ theme: { palette } }) => ({
+          background: `linear-gradient(45deg, ${palette.primary.dark}, ${palette.secondary.light})`,
+          padding: 2,
+        }),
+      },
+    },
+    MuiAvatar: {
+      styleOverrides: {
+        root: ({ theme: { palette } }) => ({
+          background: `linear-gradient(45deg, ${palette.primary.dark}, ${palette.secondary.light})`,
+          width: 24,
+          height: 24,
+        }),
+      },
     },
   },
 });
