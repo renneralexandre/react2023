@@ -4,9 +4,20 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import AppThemeProvider from "./context/theme.context";
 // ======================= =======================
-import App from "./App.tsx";
-import UserList from "./pages/users/index.tsx";
-const router = createBrowserRouter([{ path: "/", element: <App />, children: [{ path: "users", element: <UserList /> }] }]);
+import Layout from "./layout";
+import { Home, Users, Form } from "./pages";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      { path: "", element: <Home />, index: true },
+      { path: "users", element: <Users /> },
+      { path: "form", element: <Form /> },
+    ],
+  },
+]);
 
 // ======================= =======================
 ReactDOM.createRoot(document.getElementById("root")!).render(

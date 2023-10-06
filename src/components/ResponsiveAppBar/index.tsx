@@ -11,6 +11,9 @@ const ResponsiveAppBar = () => {
         <MenuItem>
           <Link to="/users">Users</Link>
         </MenuItem>
+        <MenuItem>
+          <Link to="/form">Form</Link>
+        </MenuItem>
       </Toolbar>
     </AppBar>
   );

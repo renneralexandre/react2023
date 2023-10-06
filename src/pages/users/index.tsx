@@ -30,7 +30,7 @@ const UserCard: React.FC<User> = ({ id, name, gender }) => (
   </Grid>
 );
 
-const UserList: React.FC = () => {
+const Users: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
@@ -49,4 +49,4 @@ const UserList: React.FC = () => {
   );
 };
 
-export default UserList;
+export default Users;
