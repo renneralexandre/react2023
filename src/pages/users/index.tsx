@@ -12,7 +12,13 @@ interface User {
 const UserCard: React.FC<User> = ({ id, name, gender }) => (
   <Grid xs={4}>
     <Card variant="outlined">
-      <CardHeader avatar={<Avatar>{name.charAt(0).toUpperCase()}</Avatar>}>teste</CardHeader>
+      <CardHeader
+        avatar={<Avatar>{name.charAt(0).toUpperCase()}</Avatar>}
+        title={
+          <Typography variant="h5" component="h2">
+            {name}
+          </Typography>
+        }></CardHeader>
       <CardContent>
         <Typography variant="h5" component="h2">
           {name}

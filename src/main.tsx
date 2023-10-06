@@ -5,7 +5,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AppThemeProvider from "./context/theme.context";
 // ======================= =======================
 import App from "./App.tsx";
-import UserList from "./components/users/index.tsx";
+import UserList from "./pages/users/index.tsx";
 const router = createBrowserRouter([{ path: "/", element: <App />, children: [{ path: "users", element: <UserList /> }] }]);
 
 // ======================= =======================

@@ -6,15 +6,18 @@ export const theme1 = createTheme({
   palette: {
     primary: {
       dark: deepPurple[900],
-      main: deepPurple[800],
-      light: deepPurple[700],
+      main: deepPurple[700],
+      light: deepPurple[500],
       contrastText: deepPurple[100],
     },
     tonalOffset: 0.5,
     secondary: {
       dark: cyan[900],
-      main: cyan[800],
-      light: cyan[700],
+      main: cyan[700],
+      light: cyan[500],
+    },
+    text: {
+      secondary: "white",
     },
   },
   typography: {
@@ -29,7 +32,7 @@ export const theme1 = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: ({ theme: { palette } }) => ({
-          background: `linear-gradient(45deg, ${palette.primary.dark}, ${palette.secondary.light})`,
+          background: `linear-gradient(45deg, ${palette.primary.dark}, ${palette.secondary.dark})`,
           padding: 2,
         }),
       },
@@ -37,7 +40,8 @@ export const theme1 = createTheme({
     MuiCardHeader: {
       styleOverrides: {
         root: ({ theme: { palette } }) => ({
-          background: `linear-gradient(45deg, ${palette.primary.dark}, ${palette.secondary.light})`,
+          background: `linear-gradient(45deg, ${palette.primary.dark}, ${palette.secondary.dark})`,
+          color: palette.secondary.light,
           padding: 2,
         }),
       },
@@ -45,7 +49,7 @@ export const theme1 = createTheme({
     MuiAvatar: {
       styleOverrides: {
         root: ({ theme: { palette } }) => ({
-          background: `linear-gradient(45deg, ${palette.primary.dark}, ${palette.secondary.light})`,
+          background: `linear-gradient(45deg, ${palette.primary.dark}, ${palette.secondary.dark})`,
           width: 24,
           height: 24,
         }),
