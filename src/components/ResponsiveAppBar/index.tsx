@@ -1,19 +1,19 @@
-import { AppBar, MenuItem, Toolbar } from "@mui/material";
+import { AppBar, Button, Toolbar } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const ResponsiveAppBar = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <MenuItem>
+        <Button>
           <Link to="/">Home</Link>
-        </MenuItem>
-        <MenuItem>
+        </Button>
+        <Button>
           <Link to="/users">Users</Link>
-        </MenuItem>
-        <MenuItem>
+        </Button>
+        <Button>
           <Link to="/form">Form</Link>
-        </MenuItem>
+        </Button>
       </Toolbar>
     </AppBar>
   );

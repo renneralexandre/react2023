@@ -55,5 +55,15 @@ export const theme1 = createTheme({
         }),
       },
     },
+    MuiButton: {
+      variants: [
+        {
+          props: { variant: "menu" },
+          style: {
+            color: "white",
+          },
+        },
+      ],
+    },
   },
 });
