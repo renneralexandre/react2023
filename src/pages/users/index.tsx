@@ -42,15 +42,15 @@ const Users: React.FC = () => {
   }, []);
 
   return (
-    <Grid container>
-      <Grid xs={12} md={12}>
+    <Grid container rowSpacing={1} columnSpacing={{ xl: 2, lg: 1, md: 1, sm: 1, xs: 1 }}>
+      {/* <Grid xs={12} md={12}>
         <div style={{ background: "red" }}>cabec</div>
       </Grid>
       <Grid xs={12} md={12}>
         <Card>teste</Card>
-      </Grid>
+      </Grid> */}
       {users.map((user) => (
-        <Grid xs={12} md={12}>
+        <Grid xl={2} lg={2.4} md={3} sm={4} xs={12}>
           <UserCard key={user.id} {...user} />
         </Grid>
       ))}
