@@ -37,17 +37,19 @@ export const theme1 = createTheme({
         }),
       },
     },
-    // MuiCard: {
-    //   styleOverrides: {
-    //     root: ({ theme: { palette } }) => ({
-    //       width: "100%",
-    //       [theme.breakpoints.down("md")]: {
-    //         // display: "none",
-    //         width: "100%",
-    //       },
-    //     }),
-    //   },
-    // },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          width: "100%",
+          WebkitBoxShadow: "0px 10px 13px -7px #000000, -19px -19px 15px 1px rgba(0,0,0,0)",
+          boxShadow: "0px 10px 13px -7px #000000, -19px -19px 15px 1px rgba(0,0,0,0)",
+          background: "#CE5937",
+          background: "-moz-linear-gradient(-45deg, #CE5937 0%, #1C6EA4 50%, #C59237 100%)",
+          background: "-webkit-linear-gradient(-45deg, #CE5937 0%, #1C6EA4 50%, #C59237 100%)",
+          background: "linear-gradient(135deg, #CE5937 0%, #1C6EA4 50%, #C59237 100%)",
+        },
+      },
+    },
     MuiCardHeader: {
       styleOverrides: {
         root: ({ theme: { palette } }) => ({
