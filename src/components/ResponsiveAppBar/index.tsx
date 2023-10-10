@@ -1,18 +1,19 @@
 import { AppBar, Button, Toolbar } from "@mui/material";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ResponsiveAppBar = () => {
+  const navigate = useNavigate();
   return (
     <AppBar position="static">
       <Toolbar>
-        <Button>
-          <Link to="/">Home</Link>
+        <Button variant="menu2" onClick={() => navigate("/")}>
+          Home
         </Button>
-        <Button>
-          <Link to="/users">Users</Link>
+        <Button variant="menu2" onClick={() => navigate("/users")}>
+          Users
         </Button>
-        <Button>
-          <Link to="/form">Form</Link>
+        <Button variant="menu2" onClick={() => navigate("/form")}>
+          Form
         </Button>
       </Toolbar>
     </AppBar>

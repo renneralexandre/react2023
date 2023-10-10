@@ -1,6 +1,7 @@
 // Using Typescript, create a Component to fetch http://localhost:3333/users and show cards for each user, which users object contain {id, name, gender}fields.
 
-import { Avatar, Card, CardContent, CardHeader, Grid, Typography } from "@mui/material";
+import { Avatar, Card, CardContent, CardHeader, Typography } from "@mui/material";
+import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import { useState, useEffect } from "react";
 
 interface User {
@@ -10,7 +11,7 @@ interface User {
 }
 // Generate a formatted card
 const UserCard: React.FC<User> = ({ id, name, gender }) => (
-  <Grid xs={4}>
+  <Grid>
     <Card variant="outlined">
       <CardHeader
         avatar={<Avatar>{name.charAt(0).toUpperCase()}</Avatar>}
@@ -34,7 +35,7 @@ const Users: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:3333/users")
+    fetch("http://192.168.0.12:3333/users")
       .then((response) => response.json())
       .then((data) => setUsers(data))
       .catch((error) => console.error("Error:", error));
@@ -42,8 +43,16 @@ const Users: React.FC = () => {
 
   return (
     <Grid container>
+      <Grid xs={12} md={12}>
+        <div style={{ background: "red" }}>cabec</div>
+      </Grid>
+      <Grid xs={12} md={12}>
+        <Card>teste</Card>
+      </Grid>
       {users.map((user) => (
-        <UserCard key={user.id} {...user} />
+        <Grid xs={12} md={12}>
+          <UserCard key={user.id} {...user} />
+        </Grid>
       ))}
     </Grid>
   );

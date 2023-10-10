@@ -37,15 +37,30 @@ export const theme1 = createTheme({
         }),
       },
     },
+    // MuiCard: {
+    //   styleOverrides: {
+    //     root: ({ theme: { palette } }) => ({
+    //       width: "100%",
+    //       [theme.breakpoints.down("md")]: {
+    //         // display: "none",
+    //         width: "100%",
+    //       },
+    //     }),
+    //   },
+    // },
     MuiCardHeader: {
       styleOverrides: {
         root: ({ theme: { palette } }) => ({
           background: `linear-gradient(45deg, ${palette.primary.dark}, ${palette.secondary.dark})`,
           color: palette.secondary.light,
           padding: 2,
+          // [theme.breakpoints.down("md")]: {
+          //   display: "none",
+          // },
         }),
       },
     },
+
     MuiAvatar: {
       styleOverrides: {
         root: ({ theme: { palette } }) => ({
@@ -58,12 +73,22 @@ export const theme1 = createTheme({
     MuiButton: {
       variants: [
         {
-          props: { variant: "menu" },
+          props: { variant: "menu2" },
           style: {
             color: "white",
+            display: "block",
+            my: 2,
+            background: "transparent",
           },
         },
       ],
+    },
+    MuiLink: {
+      styleOverrides: {
+        root: {
+          underlineHover: "none", // remove the default hover effect on links in this component (MUI v5)
+        },
+      },
     },
   },
 });
