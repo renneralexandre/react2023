@@ -59,6 +59,7 @@ function ResponsiveAppBar() {
             LOGO
           </Typography>
 
+          {/* MOBILE */}
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -118,6 +119,7 @@ function ResponsiveAppBar() {
               </Button>
             ))}
           </Box>
+          {/* MOBILE */}
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
